@@ -492,6 +492,10 @@ def main():
     # Get the metric function
     if data_args.task_name is not None:
         metric = evaluate.load("glue", data_args.task_name)
+        # log the metric
+        logger.info("##############")
+        logger.info(metric)
+        print(metric)
     else:
         metric = evaluate.load("accuracy")
 
